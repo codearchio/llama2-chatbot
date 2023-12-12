@@ -20,11 +20,11 @@ with st.sidebar:
     os.environ['REPLICATE_API_TOKEN'] = replicate_api
 
     st.subheader('Models and parameters')
-    selected_model = st.sidebar.selectbox('Choose a Llama2 model', ['Llama2-13B-chat', 'Llama2-13B'], key='selected_model')
-    if selected_model == 'Llama2-13B':
-        llm = 'meta/llama-2-13b:078d7a002387bd96d93b0302a4c03b3f15824b63104034bfa943c63a8f208c38'
+    selected_model = st.sidebar.selectbox('Choose a Llama2 model', ['Llama2-13B-chat', 'Llama2-7B-chat'], key='selected_model')
+    if selected_model == 'Llama2-7B-chat':
+        llm = 'meta/llama-2-7b-chat:13c3cdee13ee059ab779f0291d29054dab00a47dad8261375654de5540165fb0'
     elif selected_model == 'Llama2-13B-chat':
-        llm = 'lucataco/llama-2-13b-chat:18f253bfce9f33fe67ba4f659232c509fbdfb5025e5dbe6027f72eeb91c8624b'
+        llm = 'meta/llama-2-13b-chat:f4e2de70d66816a838a89eeeb621910adffb0dd0baba3976c96980970978018d'
     temperature = st.sidebar.slider('temperature', min_value=0.01, max_value=5.0, value=0.1, step=0.01)
     top_p = st.sidebar.slider('top_p', min_value=0.01, max_value=1.0, value=0.9, step=0.01)
     max_length = st.sidebar.slider('max_length', min_value=32, max_value=4000, value=4000, step=8)
